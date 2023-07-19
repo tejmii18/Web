@@ -1,0 +1,479 @@
+﻿@model AtemSwitcherDataClass
+@{
+    ViewData["Title"] = "ATEM Mini control panel";
+}
+
+<body style="margin: 25px 50px 50px 50px">
+
+    <h1 style="text-align:center">ATEM Mini control panel</h1>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Kamery</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                        <form asp-action="Control">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <input type="hidden" asp-for="camera" value="0" />
+                                <input type="hidden" asp-for="button" value="kamera" />
+                                <button type="submit" class="btn btn-primary">CAM1</button>
+                            </div>
+                        </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="camera" value="1" />
+                                    <input type="hidden" asp-for="button" value="kamera" />
+                                <button type="submit" class="btn btn-primary">CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="camera" value="2" />
+                                    <input type="hidden" asp-for="button" value="kamera" />
+                                <button type="submit" class="btn btn-primary">CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="camera" value="3" />
+                                    <input type="hidden" asp-for="button" value="kamera" />
+                                <button type="submit" class="btn btn-primary">CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Preview</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="previewCamera" value="0" />
+                                    <input type="hidden" asp-for="button" value="preview" />
+                                    <button type="submit" class="btn btn-secondary">CAM1</button>
+                                </div>
+                            </form>
+                        </div> 
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="previewCamera" value="1" />
+                                    <input type="hidden" asp-for="button" value="preview" />
+                                    <button type="submit" class="btn btn-secondary">CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="previewCamera" value="2" />
+                                    <input type="hidden" asp-for="button" value="preview" />
+                                    <button type="submit" class="btn btn-secondary">CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="previewCamera" value="3" />
+                                    <input type="hidden" asp-for="button" value="preview" />
+                                    <button type="submit" class="btn btn-secondary">CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Přechody</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="button" value="transition" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <button type="submit" class="btn btn-warning">MIX</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="button" value="transition" />
+                                    <input type="hidden" asp-for="transition" value="dip" />
+                                    <button type="submit" class="btn btn-warning">DIP</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="transition" />
+                                    <button type="submit" class="btn btn-warning">WIPE</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="transition" value="dve" />
+                                    <input type="hidden" asp-for="button" value="transition" />
+                                    <button type="submit" class="btn btn-warning">DVE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Délka přechodů</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="15" />
+                                    <input type="hidden" asp-for="button" value="transitionTime" />
+                                    <button type="submit" class="btn btn-warning">0.5</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                <input type="hidden" asp-for="button" value="transitionTime" />
+                                    <button type="submit" class="btn btn-warning">1.0</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="45" />
+                                <input type="hidden" asp-for="button" value="transitionTime" />
+                                    <button type="submit" class="btn btn-warning">1.5</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="button" value="transitionTime" />
+                                    <button type="submit" class="btn btn-warning">2.0</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Proveď</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="button" value="cut" />
+                                    <button type="submit" class="btn btn-info">CUT</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="button" value="auto" />
+                                    <button type="submit" class="btn btn-info">AUTO</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="button" value="ftb" />
+                                    <button type="submit" class="btn btn-dark">FTB</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>Master audio</h2>
+                <form asp-action="Control">
+                    <div class="form-group">
+                        <input type="range" class="form-control-range" id="formControlRange" asp-for="gain" min="-100" max="10">
+                        <input type="hidden" asp-for="button" value="gain" />
+                        <button type="submit" class="btn btn-secondary">Změnit hlasitost</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        <h1 style="text-align:center">Makra</h1>
+        <br />
+        <div class="row">
+            <div class="col">
+                <h2>WIPE přechod - 1s</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="0" />
+                                    <button type="submit" class="btn btn-success">-> CAM1</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="1" />
+                                    <button type="submit" class="btn btn-success">-> CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="2" />
+                                    <button type="submit" class="btn btn-success">-> CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="3" />
+                                    <button type="submit" class="btn btn-success">-> CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>WIPE přechod - 2s</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="0" />
+                                    <button type="submit" class="btn btn-success">-> CAM1</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="1" />
+                                    <button type="submit" class="btn btn-success">-> CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="2" />
+                                    <button type="submit" class="btn btn-success">-> CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="wipe" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="3" />
+                                    <button type="submit" class="btn btn-success">-> CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>MIX přechod - 1s</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="0" />
+                                    <button type="submit" class="btn btn-success">-> CAM1</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="1" />
+                                    <button type="submit" class="btn btn-success">-> CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="2" />
+                                    <button type="submit" class="btn btn-success">-> CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="30" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="3" />
+                                    <button type="submit" class="btn btn-success">-> CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h2>MIX přechod - 2s</h2>
+                <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="0" />
+                                    <button type="submit" class="btn btn-success">-> CAM1</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="1" />
+                                    <button type="submit" class="btn btn-success">-> CAM2</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="2" />
+                                    <button type="submit" class="btn btn-success">-> CAM3</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-auto">
+                            <form asp-action="Control">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <input type="hidden" asp-for="time" value="60" />
+                                    <input type="hidden" asp-for="transition" value="mix" />
+                                    <input type="hidden" asp-for="button" value="macro" />
+                                    <input type="hidden" asp-for="previewCamera" value="3" />
+                                    <button type="submit" class="btn btn-success">-> CAM4</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>  

@@ -1,0 +1,19 @@
+﻿@model AtemSwitcherDataClass
+@{
+    ViewData["Title"] = "ATEM Mini připojení";
+}
+<body style="margin: 25px 50px 50px 50px">
+<div class="container text-center">
+    <div class="row justify-content-md-center">
+        <h1>ATEM Mini připojení</h1>
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <img src="atemmini.png" alt="Atem Mini" width="50%">
+            <div class="form-group">
+                <input type="label" asp-for="ip" value="" placeholder="Zadej IP Adresu" />
+                <button type="submit" class="btn btn-primary">Připojit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
